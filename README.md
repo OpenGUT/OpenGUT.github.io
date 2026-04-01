@@ -41,3 +41,14 @@ This generates static files in the `out` directory.
 1. The workflow at `.github/workflows/deploy.yml` will build and publish the site automatically.
 
 The Next.js config auto-detects whether the repository is a project site and sets `basePath` accordingly during GitHub Actions builds.
+
+## Troubleshooting
+
+If GitHub shows your repository `README.md` instead of the Next.js site:
+
+1. Open the Pages URL, not the repository URL.
+	- Repository URL example: `https://github.com/<owner>/<repo>` (this always shows README)
+	- Pages URL example (project site): `https://<owner>.github.io/<repo>/`
+	- Pages URL example (user site repo named exactly `<owner>.github.io`): `https://<owner>.github.io/`
+1. Confirm in GitHub Settings > Pages that Source is `GitHub Actions`.
+1. Confirm the latest `Deploy Next.js site to GitHub Pages` workflow run succeeded.
