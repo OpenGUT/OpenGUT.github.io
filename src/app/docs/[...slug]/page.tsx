@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DocsShell } from "@/components/docs-shell";
+import { DocsShell } from "../../../components/docs-shell";
 import { getAllDocs, getDocBySlug } from "@/lib/docs";
 
 type DocPageProps = {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
+import { SiteHeader } from "../components/site-header";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({

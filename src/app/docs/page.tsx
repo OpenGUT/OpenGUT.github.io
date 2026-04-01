@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DocsShell } from "@/components/docs-shell";
+import { DocsShell } from "../../components/docs-shell";
 import { getAllDocs } from "@/lib/docs";
 
 export const metadata = {
