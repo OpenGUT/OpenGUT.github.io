@@ -1,21 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
+import { Fraunces, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "OpenGUT Docs",
-  description: "Documentation website for the OpenGUT open-source project",
+  title: "OpenGUT",
+  description: "Open-source gastrointestinal sensing toolkit — hardware, firmware, and analysis software.",
 };
 
 export default function RootLayout({
@@ -26,27 +32,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${fraunces.variable} ${plexMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-page text-ink">
-        <header className="sticky top-0 z-30 border-b border-ink/10 bg-page/90 backdrop-blur">
-          <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-            <Link href="/" className="text-lg font-semibold tracking-tight">
-              OpenGUT
-            </Link>
-            <nav className="flex items-center gap-4 text-sm font-medium">
-              <Link href="/" className="hover:text-accent transition-colors">
-                Home
-              </Link>
-              <Link href="/docs" className="hover:text-accent transition-colors">
-                Docs
-              </Link>
-            </nav>
-          </div>
-        </header>
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
-          {children}
-        </main>
+      <body className="min-h-full bg-[var(--color-cream)] text-[var(--color-ink)]">
+        <div className="site-shell">
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );

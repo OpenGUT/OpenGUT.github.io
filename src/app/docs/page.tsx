@@ -1,35 +1,38 @@
 import Link from "next/link";
-import { getAllDocsMeta } from "@/lib/docs";
+import { DocsShell } from "@/components/docs-shell";
+import { getAllDocs } from "@/lib/docs";
 
 export const metadata = {
-  title: "OpenGUT Docs",
-  description: "Documentation index",
+  title: "OpenGUT Documentation",
+  description: "Guides for hardware, firmware, and the analysis software.",
 };
 
-export default function DocsIndexPage() {
-  const docs = getAllDocsMeta();
+export default async function DocsIndexPage() {
+  const docs = await getAllDocs();
 
   return (
-    <div className="space-y-6">
-      <header>
-        <h1 className="text-3xl font-bold tracking-tight">Documentation</h1>
-        <p className="mt-2 text-ink/75">
-          Every document is loaded from a markdown file in the content/docs folder.
-        </p>
-      </header>
-
-      <div className="grid gap-4 sm:grid-cols-2">
+    <DocsShell
+      docs={docs}
+      title="Documentation"
+      description="Guides for setting up the hardware, flashing firmware, and using the analysis playground."
+    >
+      <div className="grid gap-4 md:grid-cols-2">
         {docs.map((doc) => (
           <Link
-            key={doc.slug}
-            href={`/docs/${doc.slug}`}
-            className="rounded-xl border border-ink/10 bg-card p-5 transition-transform duration-200 hover:-translate-y-0.5 hover:border-accent/40"
+            key={doc.slug.join("/")}
+            href={`/docs/${doc.slug.join("/")}`}
+            className="rounded-[1.5rem] border border-[var(--color-line)] bg-white p-6 transition-transform duration-300 hover:-translate-y-1"
           >
-            <h2 className="text-lg font-semibold">{doc.title}</h2>
-            <p className="mt-2 text-sm text-ink/75">{doc.description}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
+              {doc.slug.join(" / ")}
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight">{doc.title}</h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
+              {doc.description}
+            </p>
           </Link>
         ))}
       </div>
-    </div>
+    </DocsShell>
   );
 }

@@ -1,44 +1,108 @@
 import Link from "next/link";
 import { ImageCarousel } from "@/components/image-carousel";
-import { getAllDocsMeta } from "@/lib/docs";
+import { getAllDocs } from "@/lib/docs";
 
-export default function Home() {
-  const docs = getAllDocsMeta();
+const highlights = [
+  {
+    title: "Open hardware",
+    description:
+      "PCB schematics, layouts, and BOMs are published under a permissive license so you can build, modify, and manufacture your own sensor boards.",
+  },
+  {
+    title: "Firmware and drivers",
+    description:
+      "Embedded firmware for real-time data capture with USB streaming drivers compatible with macOS, Linux, and Windows.",
+  },
+  {
+    title: "Analysis playground",
+    description:
+      "A desktop app for visualising recordings, annotating events, and applying AI-powered filters to isolate gastric sounds.",
+  },
+];
+
+export default async function Home() {
+  const docs = await getAllDocs();
 
   return (
-    <div className="space-y-10">
-      <section className="overflow-hidden rounded-2xl border border-ink/10 bg-card shadow-[0_20px_60px_-40px_rgba(0,0,0,0.45)]">
+    <div className="mx-auto flex w-full max-w-7xl flex-col gap-20 px-4 pb-20 pt-6 sm:px-6 lg:px-8">
+      <section className="rounded-[2rem] border border-[var(--color-line)] bg-[var(--color-panel)] p-3 shadow-[0_30px_80px_rgba(34,42,54,0.08)] sm:p-5">
         <ImageCarousel
-          slides={[
-            {
-              src: "/carousel/slide-1.svg",
-              alt: "OpenGUT feature overview",
-            },
-            {
-              src: "/carousel/slide-2.svg",
-              alt: "OpenGUT architecture overview",
-            },
-            {
-              src: "/carousel/slide-3.svg",
-              alt: "OpenGUT community and roadmap",
-            },
-          ]}
           title="OpenGUT"
-          subtitle="A practical open-source toolkit for building robust data and model pipelines."
+          subtitle="An open-source gastrointestinal sensing toolkit — from custom sensor hardware to AI-assisted signal analysis."
         />
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {docs.map((doc) => (
-          <Link
-            key={doc.slug}
-            href={`/docs/${doc.slug}`}
-            className="rounded-xl border border-ink/10 bg-card p-5 transition-transform duration-200 hover:-translate-y-0.5 hover:border-accent/40"
-          >
-            <h2 className="text-lg font-semibold">{doc.title}</h2>
-            <p className="mt-2 text-sm text-ink/75">{doc.description}</p>
-          </Link>
-        ))}
+      <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="space-y-5 rounded-[1.75rem] bg-[var(--color-ink)] p-8 text-[var(--color-cream)] shadow-[0_24px_64px_rgba(34,42,54,0.18)] sm:p-10">
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-[var(--color-gold)]">
+            What is OpenGUT?
+          </p>
+          <h2 className="font-[family:var(--font-fraunces)] text-4xl leading-tight sm:text-5xl">
+            Hardware, firmware, and software for studying gut sounds — freely available.
+          </h2>
+          <p className="max-w-2xl text-base leading-8 text-[color:rgba(250,246,239,0.82)] sm:text-lg">
+            OpenGUT provides everything you need to record, process, and analyse
+            gastrointestinal acoustic signals — from the sensor board to the
+            analysis desktop application.
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link className="button-primary" href="/docs">
+              Read the docs
+            </Link>
+            <Link className="button-secondary" href="/docs/getting-started">
+              Get started
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid gap-4">
+          {highlights.map((highlight) => (
+            <article
+              key={highlight.title}
+              className="rounded-[1.5rem] border border-[var(--color-line)] bg-white/85 p-6 backdrop-blur"
+            >
+              <h2 className="text-lg font-semibold tracking-tight">{highlight.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
+                {highlight.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="rounded-[1.75rem] border border-[var(--color-line)] bg-[linear-gradient(180deg,rgba(188,130,86,0.12),rgba(255,255,255,0.9))] p-8">
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-[var(--color-accent)]">
+            Markdown-driven docs
+          </p>
+          <h2 className="mt-4 font-[family:var(--font-fraunces)] text-3xl leading-tight">
+            Every documentation page lives as a standalone Markdown file.
+          </h2>
+          <p className="mt-4 text-base leading-8 text-[var(--color-muted)]">
+            Drop a file in <code className="text-sm">content/docs</code>, add frontmatter, and the site
+            automatically adds it to the navigation and generates a static route.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {docs.map((doc) => (
+            <Link
+              key={doc.slug.join("/")}
+              href={`/docs/${doc.slug.join("/")}`}
+              className="group rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-panel)] p-6 transition-transform duration-300 hover:-translate-y-1"
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+                Documentation
+              </p>
+              <h3 className="mt-3 text-xl font-semibold tracking-tight group-hover:text-[var(--color-accent)]">
+                {doc.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
+                {doc.description}
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   );

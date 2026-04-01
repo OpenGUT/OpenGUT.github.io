@@ -1,17 +1,15 @@
 import type { NextConfig } from "next";
 
-const [owner = "", repositoryName = ""] = (process.env.GITHUB_REPOSITORY ?? "").split("/");
-const isUserSite = repositoryName.toLowerCase() === `${owner.toLowerCase()}.github.io`;
-const shouldUseProjectBasePath = process.env.GITHUB_ACTIONS === "true" && !isUserSite;
-const basePath = shouldUseProjectBasePath ? `/${repositoryName}` : "";
+const isGitHubPagesBuild = process.env.GITHUB_PAGES === "true";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  trailingSlash: true,
+  output: isGitHubPagesBuild ? "export" : "standalone",
   images: {
-    unoptimized: true,
+    unoptimized: isGitHubPagesBuild,
   },
-  basePath,
+  trailingSlash: isGitHubPagesBuild,
+  basePath: basePath || undefined,
   assetPrefix: basePath || undefined,
 };
 

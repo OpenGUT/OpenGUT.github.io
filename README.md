@@ -1,54 +1,36 @@
-# OpenGUT Documentation Site
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A Next.js + Tailwind documentation website that uses markdown files as the page source and exports as static files for GitHub Pages.
+## Getting Started
 
-## Local Development
+First, run the development server:
 
 ```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open http://localhost:3000.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Markdown-Managed Docs
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Put markdown files in `content/docs/*.md`.
-- Each file should include frontmatter fields:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```md
----
-title: Page Title
-description: Short summary
-order: 1
----
-```
+## Learn More
 
-- URL format is `/docs/<filename>`.
+To learn more about Next.js, take a look at the following resources:
 
-## Build for Static Hosting
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```bash
-npm run build
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-This generates static files in the `out` directory.
+## Deploy on Vercel
 
-## Deploy to GitHub Pages
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. Push to `main`.
-1. In GitHub repository settings, enable Pages and select GitHub Actions as the source.
-1. The workflow at `.github/workflows/deploy.yml` will build and publish the site automatically.
-
-The Next.js config auto-detects whether the repository is a project site and sets `basePath` accordingly during GitHub Actions builds.
-
-## Troubleshooting
-
-If GitHub shows your repository `README.md` instead of the Next.js site:
-
-1. Open the Pages URL, not the repository URL.
-	- Repository URL example: `https://github.com/<owner>/<repo>` (this always shows README)
-	- Pages URL example (project site): `https://<owner>.github.io/<repo>/`
-	- Pages URL example (user site repo named exactly `<owner>.github.io`): `https://<owner>.github.io/`
-1. Confirm in GitHub Settings > Pages that Source is `GitHub Actions`.
-1. Confirm the latest `Deploy Next.js site to GitHub Pages` workflow run succeeded.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
