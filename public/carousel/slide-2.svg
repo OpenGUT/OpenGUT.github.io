@@ -1,0 +1,6 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0F4C5C"/>
+  <rect x="140" y="150" width="1320" height="600" rx="40" fill="#E36414" fill-opacity="0.24"/>
+  <path d="M240 620C380 430 540 430 680 620C820 810 980 810 1120 620C1260 430 1380 450 1460 530" stroke="#FBF8CC" stroke-width="16" stroke-linecap="round"/>
+  <text x="180" y="360" fill="#FBF8CC" font-size="84" font-family="Arial, sans-serif" font-weight="700">Composable Architecture</text>
+</svg>

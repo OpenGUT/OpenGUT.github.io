@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --page: #f4f1e9;
+  --ink: #1b1a17;
+  --accent: #b4432f;
+  --card: #fffdf8;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 10%, #f5e3ba 0%, transparent 45%),
+    radial-gradient(circle at 80% 90%, #f7cfb6 0%, transparent 40%),
+    var(--page);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.prose {
+  max-width: 72ch;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.prose h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 1.2rem 0;
+}
+
+.prose h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 1.25rem 0 0.75rem;
+}
+
+.prose p,
+.prose li {
+  line-height: 1.75;
+  margin: 0.7rem 0;
+}
+
+.prose code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9em;
+  background: #f0ebdd;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+}
+
+.prose pre {
+  background: #1f1f1f;
+  color: #f6f6f6;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
