@@ -36,7 +36,7 @@ jobs:
           GITHUB_PAGES: true
 
       - name: Add .nojekyll
-        run: touch out/.nojekyll
+        run: mkdir -p out && touch out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -53,6 +53,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
