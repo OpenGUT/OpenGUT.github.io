@@ -18,7 +18,7 @@ A desktop-based graphical interface is provided for configuration and signal ins
 The hardware is designed for wearable deployment using a belt-mounted form factor and a dedicated acoustic interface that improves coupling between the body and the sensor. The system is modular, allowing researchers to operate in sensing-only configurations or integrate additional components such as audio or haptic actuators depending on the application.
 
 OpenGut is intended for use in human-computer interaction, physiological sensing, and prototyping contexts where access to raw gut signals and flexible system configuration are required.  
-![OpenGut overview][image1]
+![OpenGut overview](data:image/png;base64,image1)
 
 ## 2\. System Architecture
 
@@ -28,8 +28,8 @@ OpenGut is composed of three primary subsystems: (1) wearable hardware, (2) embe
 
 The hardware is built around a custom embedded platform designed for wearable gut signal acquisition and optional actuation. The core components include:
 
-![Hardware architecture][image2]  
-![Hardware detail][image3]
+![Hardware architecture](data:image/png;base64,image2)
+![Hardware detail](data:image/png;base64,image3)
 
 * Dual digital microphones:
 
@@ -119,7 +119,7 @@ Before assembling the OpenGut wearable device, ensure that all required componen
 
 Step 0: Source the PCB
 
-* The PCB Gerber files are available on the GitHub repository. Download them are get them manufactured from a reputed seller like JLCPCB https://jlcpcb.com/?from=VBSJLCPCB\&utm\_source=bing\&utm\_medium=cpc\&utm\_campaign=422890460\&utm\_content=\&utm\_term=p\_jlcpcb%20eagle\&adgroupid=1345803553234414\&msclkid=162e2da3c72f16b1a78544776da363a4   
+* The PCB Gerber files are available on the GitHub repository. Download them are get them manufactured from a reputed seller like JLCPCB https://jlcpcb.com
 * The components can also be soldered from JLCPCB. Just provide them with the BOM.  
 * You should receive the assembled PCB in 3 to 4 weeks time. 
 
