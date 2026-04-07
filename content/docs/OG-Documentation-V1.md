@@ -18,7 +18,7 @@ A desktop-based graphical interface is provided for configuration and signal ins
 The hardware is designed for wearable deployment using a belt-mounted form factor and a dedicated acoustic interface that improves coupling between the body and the sensor. The system is modular, allowing researchers to operate in sensing-only configurations or integrate additional components such as audio or haptic actuators depending on the application.
 
 OpenGut is intended for use in human-computer interaction, physiological sensing, and prototyping contexts where access to raw gut signals and flexible system configuration are required.  
-![][image1]
+![OpenGut overview][image1]
 
 ## 2\. System Architecture
 
@@ -28,8 +28,8 @@ OpenGut is composed of three primary subsystems: (1) wearable hardware, (2) embe
 
 The hardware is built around a custom embedded platform designed for wearable gut signal acquisition and optional actuation. The core components include:
 
-![][image2]  
-![][image3]
+![Hardware architecture][image2]  
+![Hardware detail][image3]
 
 * Dual digital microphones:
 
