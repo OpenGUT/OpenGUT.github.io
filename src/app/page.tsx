@@ -4,19 +4,19 @@ import { getAllDocs } from "@/lib/docs";
 
 const highlights = [
   {
-    title: "Open hardware",
+    title: "Open-source design",
     description:
       "PCB schematics, layouts, and BOMs are published under a permissive license so you can build, modify, and manufacture your own sensor boards.",
   },
   {
-    title: "Firmware and drivers",
+    title: "Simple yet powerful software",
     description:
-      "Embedded firmware for real-time data capture with USB streaming drivers compatible with macOS, Linux, and Windows.",
+      "Assist your gut research with simple software interface that comes with the freedom of customization as you want.",
   },
   {
-    title: "Analysis playground",
+    title: "Join the community",
     description:
-      "A desktop app for visualising recordings, annotating events, and applying AI-powered filters to isolate gastric sounds.",
+      "OpenGUT is available from the GitHub repository. Let's create the gut research fun together!",
   },
 ];
 
@@ -28,7 +28,7 @@ export default async function Home() {
       <section className="rounded-[2rem] border border-[var(--color-line)] bg-[var(--color-panel)] p-3 shadow-[0_30px_80px_rgba(34,42,54,0.08)] sm:p-5">
         <ImageCarousel
           title="OpenGUT"
-          subtitle="An open-source gastrointestinal sensing toolkit — from custom sensor hardware to AI-assisted signal analysis."
+          subtitle="An Open-Source Platform for Gut-Computer Interaction Research."
         />
       </section>
 
@@ -41,9 +41,9 @@ export default async function Home() {
             Hardware, firmware, and software for studying gut sounds — freely available.
           </h2>
           <p className="max-w-2xl text-base leading-8 text-[color:rgba(250,246,239,0.82)] sm:text-lg">
-            OpenGUT provides everything you need to record, process, and analyse
-            gastrointestinal acoustic signals — from the sensor board to the
-            analysis desktop application.
+            OpenGUT is an open-source prototyping tool that provides everything
+            you need to record, process, and analyse gastrointestinal acoustic
+            signals — from the sensor board to the analysis desktop application.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link className="button-primary" href="/docs">
