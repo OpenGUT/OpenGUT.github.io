@@ -47,10 +47,10 @@ export default async function Home() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link className="button-primary" href="/docs">
-              Read the docs
+              Get Started
             </Link>
-            <Link className="button-secondary" href="/docs/getting-started">
-              Get started
+            <Link className="button-secondary" href="https://github.com/opengut">
+              View on GitHub
             </Link>
           </div>
         </div>

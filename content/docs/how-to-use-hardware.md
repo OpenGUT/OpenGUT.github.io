@@ -2,7 +2,7 @@
 title: How to use the hardware
 navTitle: How to use hardware
 description: Details on how to use the hardware for your research
-order:
+order: 4
 ---
 
 ### Quick Start: Logger Mode

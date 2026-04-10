@@ -3,6 +3,7 @@ import Link from "next/link";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/docs", label: "Documentation" },
+  { href: "https://github.com/opengut", label: "GitHub" }
 ];
 
 export function SiteHeader() {
