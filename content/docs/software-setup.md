@@ -2,7 +2,7 @@
 title: Desktop Software Setup
 navTitle: Software Setup
 description: How to download source code, setup Python environment, and run the software.
-order: 5
+order: 4
 ---
 
 In this section we will have an overview of the Python-based OpenGUT desktop software. We prepared a tutorial video that demonstrates how to use the software. With this documentation, you will be able to understand how to interact with the software.

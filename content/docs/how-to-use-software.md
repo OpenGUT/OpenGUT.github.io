@@ -2,7 +2,7 @@
 title: How to use the software
 navTitle: How to use software
 description: Video tutorials on using software
-order: 6
+order:
 ---
 
 We prepared some video tutorials on how to use software.
