@@ -10,8 +10,8 @@ OpenGut is composed of three primary subsystems: (1) wearable hardware, (2) embe
 ### Hardware Subsystem
 The hardware is built around a custom embedded platform designed for wearable gut signal acquisition and optional actuation. The core components include:
 
-![image](../images/system_breakdown.jpg)
-![image](../images/annotated-pcb.jpg)
+![image](/images/system_breakdown.jpg)
+![image](/images/annotated-pcb.jpg)
 
 #### Dual digital microphones:
 A body-facing microphone captures abdominal acoustic signals, while an ambient-facing microphone records environmental noise. The two channels are sampled synchronously to support noise-aware processing. We use CMM-4030DB-26354-TR PDM MEMs microphone from Same Sky, but any PDM microphone with similar frequency response should work. 

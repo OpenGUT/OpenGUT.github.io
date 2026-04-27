@@ -17,4 +17,4 @@ The hardware is designed for wearable deployment using a belt-mounted form facto
 
 OpenGut is intended for use in human-computer interaction, physiological sensing, and prototyping contexts where access to raw gut signals and flexible system configuration are required.
 
-![OpenGUT Hardware breakdown image](../images/system_breakdown.jpg)
+![OpenGUT Hardware breakdown image](/images/system_breakdown.jpg)
