@@ -4,7 +4,9 @@ import path from "node:path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkRehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
+import rehypeStringify from "rehype-stringify";
 import gfm from "remark-gfm";
 
 const docsDirectory = path.join(process.cwd(), "content", "docs");
@@ -63,8 +65,11 @@ function filePathToSlug(filePath: string) {
 async function markdownToHtml(markdown: string) {
   const processed = await remark()
     .use(gfm)
-    .use(html, { allowDangerousHtml: true })
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeStringify)
     .process(markdown);
+
   return processed.toString();
 }
 
