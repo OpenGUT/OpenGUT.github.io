@@ -124,27 +124,33 @@ a {
 
 .markdown ul,
 .markdown ol {
-  padding-left: 1.5rem;
-  list-style-position: outside;
+  margin-left: 1.5rem !important;
+  padding-left: 0 !important;
+  list-style-position: outside !important;
 }
 
 .markdown ul {
-  list-style-type: disc;
+  list-style-type: disc !important;
 }
 
 .markdown ol {
-  list-style-type: decimal;
+  list-style-type: decimal !important;
 }
 
 .markdown ul ul,
 .markdown ol ul,
 .markdown ul ol,
 .markdown ol ol {
-  list-style-type: circle;
+  list-style-type: circle !important;
 }
 
 .markdown li {
+  display: list-item !important;
   margin-bottom: 0.5rem;
+}
+
+.markdown li + li {
+  margin-top: 0.35rem;
 }
 
 .markdown li + li {
@@ -188,12 +194,13 @@ a {
 }
 
 .markdown iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-height: 260px;
-  aspect-ratio: 16 / 9;
-  border: none;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 320px !important;
+  aspect-ratio: 16 / 9 !important;
+  border: none !important;
+  background: var(--color-panel);
 }
 
 .markdown blockquote {
