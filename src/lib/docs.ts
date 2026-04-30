@@ -60,13 +60,35 @@ function filePathToSlug(filePath: string) {
   return relativePath.replace(/\.md$/, "").split(path.sep);
 }
 
+function addIframeFallback(htmlString: string): string {
+  // Wrap iframes with fallback link in case provider blocks embedding
+  return htmlString.replace(
+    /<iframe\s+src=["']([^"']+)["'][^>]*>.*?<\/iframe>/gi,
+    (match, src) => {
+      const fallbackText = src.includes("drive.google.com")
+        ? "Watch on Google Drive"
+        : "View video";
+      const fallbackUrl = new URL(src).origin + new URL(src).pathname;
+
+      return `<div class="iframe-wrapper">
+  ${match}
+  <p class="iframe-fallback">
+    <a href="${fallbackUrl}" target="_blank" rel="noopener noreferrer">
+      ${fallbackText} ↗
+    </a>
+  </p>
+</div>`;
+    },
+  );
+}
+
 async function markdownToHtml(markdown: string) {
   const processed = await remark()
     .use(gfm)
     .use(html, { allowDangerousHtml: true })
     .process(markdown);
 
-  return processed.toString();
+  return addIframeFallback(processed.toString());
 }
 
 function buildSummary(filePath: string, frontmatter: Frontmatter): DocSummary {

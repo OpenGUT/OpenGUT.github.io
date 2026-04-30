@@ -8,4 +8,4 @@ order: 6
 We prepared a video tutorial on how to use software real quick.
 
 ### Quick Start Tutorial Video
-<iframe src="https://drive.google.com/file/d/1paVrTbnJ0D7wjSxcqFzJGvnHAFixQW9x/preview" width="640" height="480"></iframe>
+<iframe width="720" height="540" src="https://www.youtube.com/embed/VQ03OAnQklk?si=csF1ZUAbqnMCEh2i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
