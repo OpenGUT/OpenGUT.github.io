@@ -61,7 +61,10 @@ function filePathToSlug(filePath: string) {
 }
 
 async function markdownToHtml(markdown: string) {
-  const processed = await remark().use(gfm).use(html).process(markdown);
+  const processed = await remark()
+    .use(gfm)
+    .use(html, { allowDangerousHtml: true })
+    .process(markdown);
   return processed.toString();
 }
 
