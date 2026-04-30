@@ -5,6 +5,22 @@ description: Details on how to use the hardware for your research
 order: 4
 ---
 
+### Quick Start: HW Cheat Sheet
+#### Mode Indicators
+![Four LEDs indicating different operation modes](/images/mode-indicators.jpeg)
+
+#### Control Buttons
+![An image explains the roles of three buttons on PCB](/images/control-buttons.jpeg)
+
+#### microSD Card Slot
+![An image indicates where to put a microSD card](/images/microsd-card-slot.jpeg)
+
+#### Power Indicator
+![An image indicates the location of a power indicator LED](/images/power-indicator.jpeg)
+
+#### Actuator Connector
+![An image shows wehre to connect an external actuator and its drive unit](/images/actuator-connector.jpeg)
+
 ### Quick Start: Logger Mode
 - Insert SD card
 - Turn On OpenGut Module
@@ -15,7 +31,7 @@ order: 4
 - Remove SD card
 - Turn Open Gut unit Off
 
-### Quick start: Playback Mode
+### Quick Start: Playback Mode
 - Insert SD card in the laptop
 - Select file you want to play using the UI (2 files can be supported)
 - Once selected, insert SD card to the PCB
@@ -24,7 +40,7 @@ order: 4
 - Secure theDevice in the wearable belt and wear the belt. 
 - Once ready, press the start switch to begin playback. 
 
-### Quick start: Loopback Mode
+### Quick Start: Loopback Mode
 - This mode doesn’t require a SD card. 
 - Once the device has been secured in the belt and the belt is worn, select the 2nd mode. 
 - Press start to start loopback. 

@@ -5,9 +5,7 @@ description: Video tutorials on using software
 order: 6
 ---
 
-We prepared some video tutorials on how to use software.
+We prepared a video tutorial on how to use software real quick.
 
-![video: device configuration]()
-![video: audio file loading and playback]()
-![video: audio file filtering]()
-![video: audio file annotation and export segments]()
+### Quick Start Tutorial Video
+<iframe src="https://drive.google.com/file/d/1paVrTbnJ0D7wjSxcqFzJGvnHAFixQW9x/preview" width="720" height="540"></iframe>
