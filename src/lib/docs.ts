@@ -4,9 +4,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { remark } from "remark";
-import remarkRehype from "remark-rehype";
-import rehypeRaw from "rehype-raw";
-import rehypeStringify from "rehype-stringify";
+import html from "remark-html";
 import gfm from "remark-gfm";
 
 const docsDirectory = path.join(process.cwd(), "content", "docs");
@@ -87,9 +85,7 @@ function addIframeFallback(htmlString: string): string {
 async function markdownToHtml(markdown: string) {
   const processed = await remark()
     .use(gfm)
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw)
-    .use(rehypeStringify, { allowDangerousHtml: true })
+    .use(html, { allowDangerousHtml: true })
     .process(markdown);
 
   return addIframeFallback(processed.toString());
