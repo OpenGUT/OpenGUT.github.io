@@ -11,11 +11,12 @@ The system is built around a custom embedded hardware platform that integrates d
 
 Audio is recorded locally to a microSD card and can be accessed for offline analysis or routed through the system for playback. OpenGut supports multiple modes of operation, including continuous logging, playback of recorded signals, and a real-time loopback mode, where incoming signals are rendered in real time through connected output devices.
 
-A desktop-based graphical interface is also provided for configuration and signal inspection. The interface supports parameter tuning, such as sampling rate and recording duration. It also allows for visualization of data as time-series and spectrogram. Also, basic signal processing operations such as filtering and denoising are supported.
+A desktop-based graphical interface is also provided for configuration and signal inspection. The interface supports parameter tuning, such as sampling rate and recording duration. It has features that allow visualizing data as time-series and spectrograms. There are also basic signal processing operations such as filtering and denoising.
 
-The hardware is designed for wearable deployment using a belt-mounted form factor and a dedicated acoustic interface that improves coupling between the body and the sensor. The system is modular, allowing researchers to operate in sensing-only configurations or integrate additional components such as audio or haptic actuators depending on the application.
+The hardware is designed for expedient wearable deployment, using a belt-mounted form factor and a dedicated acoustic interface that improves coupling between the body and the sensor. The system is modular, allowing researchers to operate in sensing-only configurations or integrate additional components such as audio or haptic actuators, depending on the application.
 
 OpenGut is intended for use in human-computer interaction, physiological sensing, and prototyping contexts where access to raw gut signals and flexible system configuration are required.
+
 
 
 ![OpenGUT Hardware breakdown image](/images/system_breakdown.jpg)

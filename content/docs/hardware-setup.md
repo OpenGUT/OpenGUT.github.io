@@ -8,23 +8,23 @@ order: 3
 The OpenGut system is designed to require minimal DIY assembly. Most components are modular and can be prepared using basic tools and off-the-shelf parts, with only light fabrication and assembly steps required.
 
 ## Installing Firmware
-- Clone OpenGUT GitHub repo: OpenGUT/Firmware at [OpenGUT/OpenGUT](https://github.com/OpenGUT/OpenGUT)
+- Clone OpenGUT GitHub repo: [OpenGUT/OpenGUT](https://github.com/OpenGUT/OpenGUT)
 - Download the nRF connect SDK extension on VS code and set up the environment. [Nordic Dev Zone articles might help you on this step!](https://academy.nordicsemi.com/courses/nrf-connect-sdk-fundamentals/lessons/lesson-1-nrf-connect-sdk-introduction/topic/exercise-1-1/)
 - Open the cloned repo in this environment. 
-- Build the firmware
+- Build the file.
 - The built file is ready for flashing. 
 
 ## 3.1 Pre-Assembly Preparation
 Before assembling the OpenGut wearable device, ensure that all required components are sourced and prepared.
 
 ### Step 0: Source the PCB
-- The PCB Gerber files are available on the GitHub repository. Download them are get them manufactured from a reputed seller like JLCPCB https://jlcpcb.com
+- The PCB Gerber files are available on the GitHub repository. Download the Gerber files and have them manufactured from a reputed seller such as JLCPCB https://jlcpcb.com
 - The components can also be soldered from JLCPCB. Just provide them with the BOM.
 - You should receive the assembled PCB in 3 to 4 weeks time. 
 
 ### Step 1: Source Wearable Belt
 - Purchase a stretchable running belt to house the system. We recommend a low-profile marathon runner’s belt with multiple compartments. Example used in this project: [Running Belt Bag - Black](https://www.decathlon.sg/p/running-belt-bag-black-kiprun-8759941.html)
-- We selected one position and carefully cut the material of the belt, so that the diaphragm would protrude and contact the skin directly
+- We selected one position and carefully cut the material of the belt, so that the diaphragm would protrude and contact the skin directly.
 - The addition of a hydro pack around the diaphragm may also improve body contact.
 
 ### Step 2: 3D Print Components
@@ -47,21 +47,24 @@ Ensure prints are:
 ### Step 4: Prepare PCB Standoffs
 - The PCB enclosure includes standoffs with a 2.5 mm bore.
 - Use an M3 tap to thread each standoff. Self-tapping screw will also work.
+
 Ensure:
 - Threads are clean and aligned
 - No cracking or deformation of the printed material
-- Then fasten the PCB with M3 screws to the enclosure body. Please ensure that the operational side (containing switch, indicator LEDs and SD card socket) of the PCB is faced up.
+
+Then fasten the PCB with M3 screws to the enclosure body. Please ensure that the operational side (containing switch, indicator LEDs and SD card socket) of the PCB is faced up.
 
 ### Step 5: Assemble Acoustic Cone Interface
 - Fit the stethoscope diaphragm onto the outer face of the microphone cone.
 - This assembly is mounted on the underside of the enclosure.
+
 Ensure:
 - The diaphragm is securely seated
 - There are no gaps between diaphragm and cone
 - The surface is flat for proper skin contact
 
 ### Step 6:  Micro SD card
-- We used a SanDisk Ultra 32GB. This size ensures a minimum of 24 hours of data capture. Format the card with FAT32.
+- We used a 32 GB SanDisk Ultra. This size ensures a minimum of 24 hours of data capture. Format the card to FAT32.
 - The card indexes files when activated, so that multiple recordings can be captured without downloading the data.
 - Fit microSD card into the card slot.
 

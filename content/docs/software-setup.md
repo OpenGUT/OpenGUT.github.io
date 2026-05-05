@@ -5,47 +5,70 @@ description: How to download source code, setup Python environment, and run the 
 order: 5
 ---
 
-In this section we will have an overview of the Python-based OpenGUT desktop software. We prepared a tutorial video that demonstrates how to use the software. With this documentation, you will be able to understand how to interact with the software.
+In this section, we provide an overview of the Python-based OpenGUT desktop software and how to run it locally. [A tutorial video](https://youtu.be/VQ03OAnQklk) is available demonstrating how to use the software. This documentation complements the video by outlining how to set up the environment and interact with the software.
 
-### 5.1 Setup the Python environment on your computer
-At the moment we deliver source code of the OpenGUT desktop software, which requires Python3 and a bunch of specific Python software libraries. This subsection describes how to set up a required environment to run the software.
-At the moment, the software is implemented and confirmed to be running on:
-macOS26.x, Python 3.12.13 (installed via pyenv)
+### 5.1 System Requirements
+The OpenGUT desktop software has been developed and tested in the following environment:
+- Operating System: macOS 26.x
+- Python Version: 3.12.13
+- Python Management Tool: pyenv
+*Note: Other operating systems or Python versions may work, but they are not officially supported.*
 
-Technically the software works on Linux and Windows too (OpenGUT team will prepare the installation guide for in near future).
-First, install the homebrew command line tool by following the instructions on: https://brew.sh/. If you don’t have Xcode on your Mac, you will be asked to install Apple Command Line Tool on the half way of homebrew installation. You need to install CLT since it is essential to run softwares to setup the environment and Python.
+### 5.2 Install Essential Softwares: Homebrew and Pyenv
+First, install Homebrew (a package manager for macOS) by following the instructions at: https://brew.sh/.
+During installation, if Xcode or Apple Command Line Tools are not already installed, macOS will prompt you to install them.
 
-Once it’s done, you need to install `pyenv` (https://github.com/pyenv/pyenv) software to install a specific version of Python. OpenGUT software runs well with Python 3.12.13 at the moment, so you will install it on your computer:
-```zsh
-brew install pyenv
-pyenv install 3.12.13
-```
-Then, the Python you installed needs to be assigned as a default Python for your setup:
-```zsh
-pyenv local 3.12.13
-```
+To ensure compatibility, we use pyenv to manage Python versions.
+- Step 1: Install pyenv
+ Open Terminal and run:
+ ```zsh
+ brew install pyenv
+ ```
+- Step 2: Install Python 3.12.13
+ ```zsh
+ pyenv install 3.12.13
+ ```
+- Step 3: Set the Python we just installed as default Python interpreter
+ ```zsh
+ pyenv local 3.12.13
+ ```
+- Step 4: Verify installation
+ ```zsh
+ python --version
+ ```
+You should be able to confirm Python 3.12.13 is activated.
 
-### 5.2 Setup the OpenGUT software
-Let’s clone / download the OpenGUT repository (https://github.com/OpenGUT/OpenGUT) first.
+### 5.3 Setup the OpenGUT software
+- Step 1: Clone the OpenGUT repository (https://github.com/OpenGUT/OpenGUT) first.
 ```zsh
 git clone https://github.com/OpenGUT/OpenGUT
 ```
-Or, just download the repository as a zip file and place it in any place.
+Alternatively, downloading the repository as a zip file and unzip it in a folder.
 
-Next, we will add the AudioSep project (https://github.com/Audio-AGI/AudioSep) for audio filtering with natural language. Under `OpenGUT/Software`, you will clone the project or download as similar as what we did with OpenGUT repo.
+- Step 2: Adding the [AudioSep](https://github.com/Audio-AGI/AudioSep).
+This is essential for audio filtering with natural language. Under `OpenGUT/Software`, you will clone the project or download it as a zip file and unzip it in `OpenGUT/Software` as we did in the previous step.
 ```zsh
 cd OpenGUT/Software
 git clone https://github.com/Audio-AGI/AudioSep
 ```
 
-As the AudioSep project repo mentions, download checkpoints from https://huggingface.co/spaces/Audio-AGI/AudioSep/tree/main/checkpoint and place them under `AudioSep/checkpoint`.
+- Step 3: Download checkpoints for AudioSep
+From https://huggingface.co/spaces/Audio-AGI/AudioSep/tree/main/checkpoint, download checkpoint files (all the files available from the link) and place them under `OpenGUT/Software/AudioSep/checkpoint`.
 
-In the previous chapter, we specified to use Python 3.12.13. Now we can install the libraries by running a command:
+- Step 4: Install the Python libraries by running a command:
 ```zsh
 pip3 install -r requirements_pyenv3.12.13_venv.txt
 ```
 
-Once you install all the required libraries, you can run the software by:
+- Step 5: Run the software
+Run command in below to run the OpenGUT software.
 ```zsh
 python main.py
 ```
+
+### 5.4 Troubleshooting
+- Software is not running, or software libraries cannot be installed with *5.3 Step 4*
+Ensure Python 3.12.13 is selected. Check if Pyenv is configured to use Python 3.12.13 (refer section 5.2)
+
+- Run the software on non-supported platform (Linux, Windows)
+Support for Windows and Linux will be provided in future.

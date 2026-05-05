@@ -22,30 +22,29 @@ order: 4
 ![An image shows wehre to connect an external actuator and its drive unit](/images/actuator-connector.jpeg)
 
 ### Quick Start: Logger Mode
-- Insert SD card
-- Turn On OpenGut Module
-- Toggle mode to logger mode 
-- Press run button to begin recording
-- Place module in belt, with stethoscope placed against stomach
-- When recording is complete toggle run switch to stop
-- Remove SD card
-- Turn Open Gut unit Off
+- Insert a microSD card to OpenGUT hardware.
+- Turn on OpenGUT hardware by using the on-board toggle switch.
+- Toggle mode to logger mode by using the mode selection switch.
+- Press the run button to start recording.
+- Place module in wearing belt, with a stethoscope placed in between the stomach and the hardware.
+- When recording is complete, click the run switch to stop current recording.
+- Turn OpenGUT hardware off by using the on-board toggle switch.
+- Remove the microSD card from the hardware.
 
 ### Quick Start: Playback Mode
-- Insert SD card in the laptop
-- Select file you want to play using the UI (2 files can be supported)
-- Once selected, insert SD card to the PCB
-- Turn the PCB On. 
-- Press the mode selection switch to select either file A or B to playback. 
-- Secure theDevice in the wearable belt and wear the belt. 
-- Once ready, press the start switch to begin playback. 
+- Load a microSD card on a computer.
+- Specify wave file(s) you want to play using the OpenGUT software (up to two files can be supported) and download the wave files to the microSD card.
+- Remove the microSD card from the computer and insert it to the OpenGUT hardware.
+- Turn OpenGUT hardware on by using the on-board toggle switch.
+- Click the mode selection button to select either file A or B to playback.
+- Place the hardware in a wearing belt, along with an actuator device optionally, and wear the belt.
+- Once ready, press the run button to begin playback.
 
 ### Quick Start: Loopback Mode
-- This mode doesn’t require a SD card. 
-- Once the device has been secured in the belt and the belt is worn, select the 2nd mode. 
-- Press start to start loopback. 
-- Press the same button again to stop the playback. 
-- If you want to visualize the playback on your computer, connect the output to a headphone amplifier/ or even an audio amplifier like Scarlett Solo and connect it to your laptop. 
-- Use Audacity or similar software to visualize in realtime. 
-- If you want realtime haptic feedback, connect the output to a suitable amplifier like a MAX9744 and then to the transducer. 
-- This way we can experiment with different types of transducers for feedback. 
+- This mode does not require a microSD card.
+- Turn OpenGUT hardware on by using the on-board toggle switch.
+- Once the hardware has been placed in the belt and worn, click the mode selection button (could be multiple times) to set it to Mode 2. 
+- Click the run button to start the loopback session.
+- Click the run button again to stop the loopback session. 
+- For real-time audio visualization and recording on the computer, connect the on-board sound output to a headphone amplifier or an audio amplifier (i.e. Scarlett Solo) to link the audio output to your computer. Sound processing software, such as [Audacity](https://www.audacityteam.org/) or [AudioMass](https://audiomass.co/), for visualization and recording.
+- For real-time haptic feedback to the stomach, source the on-board sound output to a suitable amplifier, such as [Adafruit MAX9744 breakout board](https://www.adafruit.com/product/1752) or similar, to connect the transducer. This allows for experimentation with different types of transducers for feedback.
