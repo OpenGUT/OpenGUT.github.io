@@ -76,10 +76,7 @@ export function ImageCarousel({ title, subtitle }: ImageCarouselProps) {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/docs" className="button-primary">
-                Explore documentation
-              </Link>
-              <Link href="/docs/getting-started" className="button-secondary">
-                Get started
+                Get Started
               </Link>
             </div>
           </div>
